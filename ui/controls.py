@@ -23,13 +23,18 @@ class Controls:
         self.inner = ctk.CTkFrame(self.bar, fg_color="transparent")
         self.inner.pack(padx=10, pady=10, fill="x")
 
+        # 🔥 CAMBIO: configurar grid para 3 columnas iguales
+        self.inner.grid_columnconfigure(0, weight=1)
+        self.inner.grid_columnconfigure(1, weight=1)
+        self.inner.grid_columnconfigure(2, weight=1)
+
         self.clock_btn = ctk.CTkButton(
             self.inner,
             text="🕒\nHora",
             command=self.toggle_time,
             corner_radius=15
         )
-        self.clock_btn.pack(side="left", expand=True, padx=5)
+        self.clock_btn.grid(row=0, column=0, padx=5, sticky="ew")
 
         self.zone_btn = ctk.CTkButton(
             self.inner,
@@ -37,7 +42,7 @@ class Controls:
             command=self.change_zone,
             corner_radius=15
         )
-        self.zone_btn.pack(side="left", expand=True, padx=5)
+        self.zone_btn.grid(row=0, column=1, padx=5, sticky="ew")
 
         self.theme_btn = ctk.CTkButton(
             self.inner,
@@ -45,7 +50,7 @@ class Controls:
             command=self.toggle_theme,
             corner_radius=15
         )
-        self.theme_btn.pack(side="left", expand=True, padx=5)
+        self.theme_btn.grid(row=0, column=2, padx=5, sticky="ew")
 
         self.update_time()
 
