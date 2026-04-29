@@ -17,13 +17,19 @@ class Controls:
         )
         self.time_label.pack(pady=5)
 
+        self.mode_label = ctk.CTkLabel(
+            parent,
+            text="☀️ Modo claro",
+            font=("Georgia", 12)
+        )
+        self.mode_label.pack(pady=(0, 6))
+
         self.bar = ctk.CTkFrame(parent, corner_radius=10)
         self.bar.pack(padx=20, pady=20, fill="x")
 
         self.inner = ctk.CTkFrame(self.bar, fg_color="transparent")
         self.inner.pack(padx=10, pady=10, fill="x")
 
-        # 🔥 CAMBIO: configurar grid para 3 columnas iguales
         self.inner.grid_columnconfigure(0, weight=1)
         self.inner.grid_columnconfigure(1, weight=1)
         self.inner.grid_columnconfigure(2, weight=1)
@@ -81,10 +87,12 @@ class Controls:
             bar_color = "#C43670"
             btn_color = "#F283AF"
             text_color = "black"
+            mode_text = "☀️  Modo claro"
         else:
             bar_color = "#d95f8c"
             btn_color = "#870339"
             text_color = "white"
+            mode_text = "🌙  Modo oscuro"
 
         self.bar.configure(fg_color=bar_color)
 
@@ -96,3 +104,8 @@ class Controls:
             )
 
         self.time_label.configure(text_color=theme["text"])
+
+        self.mode_label.configure(
+            text=mode_text,
+            text_color=text_color
+        )
