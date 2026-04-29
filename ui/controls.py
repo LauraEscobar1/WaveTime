@@ -17,32 +17,35 @@ class Controls:
         )
         self.time_label.pack(pady=5)
 
-        self.bar = ctk.CTkFrame(parent, corner_radius=25)
+        self.bar = ctk.CTkFrame(parent, corner_radius=10)
         self.bar.pack(padx=20, pady=20, fill="x")
 
+        self.inner = ctk.CTkFrame(self.bar, fg_color="transparent")
+        self.inner.pack(padx=10, pady=10, fill="x")
+
         self.clock_btn = ctk.CTkButton(
-            self.bar,
+            self.inner,
             text="🕒\nHora",
             command=self.toggle_time,
-            corner_radius=20
+            corner_radius=15
         )
-        self.clock_btn.pack(side="left", expand=True, pady=10)
+        self.clock_btn.pack(side="left", expand=True, padx=5)
 
         self.zone_btn = ctk.CTkButton(
-            self.bar,
+            self.inner,
             text="🌍\nColombia",
             command=self.change_zone,
-            corner_radius=20
+            corner_radius=15
         )
-        self.zone_btn.pack(side="left", expand=True)
+        self.zone_btn.pack(side="left", expand=True, padx=5)
 
         self.theme_btn = ctk.CTkButton(
-            self.bar,
+            self.inner,
             text="🎨\nTema",
             command=self.toggle_theme,
-            corner_radius=20
+            corner_radius=15
         )
-        self.theme_btn.pack(side="left", expand=True)
+        self.theme_btn.pack(side="left", expand=True, padx=5)
 
         self.update_time()
 
