@@ -44,7 +44,7 @@ class Controls:
 
         self.zone_btn = ctk.CTkButton(
             self.inner,
-            text="🌍\nColombia",
+            text="🌍\nZona",
             command=self.change_zone,
             corner_radius=15
         )
@@ -68,7 +68,6 @@ class Controls:
         self.selected_zone = zones[index]
         self.time_manager.set_timezone(TIMEZONES[self.selected_zone])
 
-        self.zone_btn.configure(text=f"🌍\n{self.selected_zone}")
         self.update_status()
 
     def toggle_time(self):
