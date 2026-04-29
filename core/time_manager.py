@@ -8,6 +8,6 @@ class TimeManager:
         self.offset = offset
 
     def get_time(self):
-        current = time.localtime()
-        hour = (current.tm_hour + self.offset) % 24
-        return hour, current.tm_min, current.tm_sec
+        t = time.localtime()
+        hour = (t.tm_hour + self.offset) % 24
+        return hour, t.tm_min, t.tm_sec

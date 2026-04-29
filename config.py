@@ -1,16 +1,16 @@
 THEMES = {
     "light": {
         "bg": "#FBF4EB",
-        "clock_bg": "#FBD9E5",
-        "fg": "#C43670",
+        "card": "#FBD9E5",
         "accent": "#F283AF",
+        "text": "#C43670",
         "second": "#C43670"
     },
     "dark": {
         "bg": "#0d0d0d",
-        "clock_bg": "#870339",
-        "fg": "#fbd9e5",
+        "card": "#870339",
         "accent": "#d95f8c",
+        "text": "#fbd9e5",
         "second": "#F283AF"
     }
 }
