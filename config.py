@@ -14,3 +14,9 @@ THEMES = {
         "second": "#F283AF"
     }
 }
+
+TIMEZONES = {
+    "Colombia": 0,
+    "USA": -1,
+    "España": 6
+}
